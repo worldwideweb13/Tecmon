@@ -1,0 +1,262 @@
+html {
+  display: flex;
+  justify-content: center;
+}
+
+
+body {
+  background:#2c3338;
+  color: rgb(96, 100, 104);
+  font: 87.5%/1.5em 'Open Sans', sans-serif;
+  margin: 0;
+  width: 1080px;
+}
+
+.MusicIcon {
+  cursor: pointer;  
+  margin-top:5%;
+  margin-left:78%;
+  width: 18%;
+  height: 15%;
+}
+
+
+.BackImage {
+  width: auto;
+  height: 400px;
+  background: url("../img/background.png")
+  no-repeat center;
+  background-size: cover;
+  text-align: center;
+}
+
+.EndImg {
+  width: auto;
+  height: 400px;
+  background: no-repeat center;
+  size: cover;
+  text-align: center;
+}
+
+
+/* 名前欄 */
+.NameBox {
+  background-color: #00BFFF;
+  border-bottom: 5px solid #4682B4;
+  color: white;
+  font-size: 18px;
+  margin: 8px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* アイコンに動きをつける */
+
+/* HP・ステータス文字列のデザイン */
+.StatusFont {
+  color: black;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.StatusFont > div:first-of-type::after {
+  content: '/';
+  margin: 0 5px;
+}
+
+/* HPゲージ */
+.HpLBox{
+  padding-top: 3px;
+}
+
+#HpGage {
+  margin: 0 30px;
+  border: 4px solid #777;
+  background-color: white;
+}
+
+#MonsterHpBar {
+  height: 15px;
+  background-color: #00BFFF;
+}
+
+/* ステータス欄 */
+.GageBox {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 30px;
+}
+
+.GageStatus {
+  font-size: 14px;
+}
+
+/* ステータスゲージ */
+.SkillGage {
+  margin: 0 30px;
+  border: 1px solid #777;
+  background-color: white;
+}
+.SkillValue {
+  height: 16px;
+  width: 0%;
+}
+
+#FrontScoreBar {
+  background-color: #D0FF43;	    
+}
+
+#BackScoreBar {
+  background-color: #46EEFF;	    
+}
+
+#InfraScoreBar {
+  background-color: #7B3CFF;	    
+}
+
+/* コメント欄制御 */
+/* 黒板 */
+.blackboard {
+  /* position: relative; */
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  height: 11%;
+  font-size: 1.2rem;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 0 4px #fff inset;
+  background-color: rgba(0,0,0,0.9);
+  position: relative;
+ }
+    .blackboard a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+#Next {
+  font-size: 15px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  animation: blink 1.4s infinite;
+}
+
+    /* 点滅 */
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    @-webkit-keyframes blink {
+      50% { opacity: 0; }
+    }
+
+/* ボタン要素のレイアウト */
+.BLBox_1 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5%;
+  width: 90%;
+}
+
+.BLBox_2 {
+  display: flex;
+  justify-content: center;
+  margin: 0 5%;
+}
+
+/* ユーザー入力時のボタン要素 */
+.btn--blue {
+  color: #000;
+  background-color: #00BFFF;
+  border-bottom: 5px solid #4682B4;
+  text-align: center;
+  color: white;
+  width: 40%;
+  margin: 10px 5px 0;
+}
+
+.btn--blue:hover {
+  margin-bottom: 3px;
+  color: rgb(126, 119, 119);
+  background: #1E90FF;
+  border-bottom: 2px solid #4682B4;
+  color: yellow;
+}
+
+/* ボタンの非活性化 */
+.deactive {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/*休ませるボタン  */
+#RestButton {
+  width:100%;
+}
+
+
+/*  タブレット対応 */
+@media (max-width: 800px) {
+  html {
+    width: 100%;
+  }
+  .BackImage {
+      width: 100%;
+      height: 480px;
+      background: url("../img/background.png")
+      no-repeat center;
+      background-size: cover;
+      text-align: center;            
+  }
+  .Character {
+      width: 60%;
+      height: 60%;
+  }
+  .blackboard {
+      margin-top: 20px; 
+      padding: 1rem 1rem;
+      height: 18%;
+  }      
+}
+
+/*スマホ画面対応 */
+@media (max-width: 480px) {
+  html {
+    width: 100%;
+  }
+  .BackImage {
+      width: 100%;
+      height: 380px;
+      background: url("../img/background.png")
+      no-repeat center;
+      background-size: cover;
+      text-align: center;    
+  }
+
+  .EndImg {
+    width: 85%;
+    height: 400px;
+    background: no-repeat center;
+    size: cover;
+    text-align: center;
+  }
+
+  .Character {
+      width: 70%;
+      height: 60%;
+  }
+  .blackboard {
+      margin-top: 0px;
+      padding: 1rem 1rem;
+      height: 16%;
+  }
+  .MusicIcon {
+    cursor: pointer;   
+    margin-top:5%;
+    margin-left:78%;
+    width: 18%;
+    height: 15%;
+  }   
+  
+}
