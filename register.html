@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="./css/register.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+  <div id="login">
+    <div id="form-login">
+          <input type="text" id="UserId" placeholder="ユーザID">
+          <input type="text" id="UserName" placeholder="あなたのお名前">         
+          <input type="text" id="MonsterName" placeholder="モンスターのお名前"> 
+          <input type="password" id="PassWord" placeholder="PASSWORD">
+          <!-- <input type="submit" value="Login" onclick="LoginAction()">  -->
+          <input type="submit" value="Register" onclick="RegisterAction()">            
+      </div>
+  </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCZ8HNTkog787frY_B7CH7DAMvgtd0YPrY",
+    authDomain: "temonqiita.firebaseapp.com",
+    projectId: "temonqiita",
+    storageBucket: "temonqiita.appspot.com",
+    messagingSenderId: "417661788738",
+    appId: "1:417661788738:web:07bea96fbd263b20ef03db"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // ref.push();で()内の値をfirebaseに送信 
+  const db = firebase.database();
+
+  function RegisterAction(){
+    // ユーザーの入力されたテキストデータを取得
+    const UserId = $("#UserId").val();
+    const UserName = $("#UserName").val();   
+    const MonsterName = $("#MonsterName").val();
+    const PassWord = $("#PassWord").val();
+
+    // 入力された個人情報を変数に格納
+    const PersonalData ={     
+      UserId: UserId,
+      UserName: UserName,
+      PassWord: PassWord,
+    }
+
+    // ユーザー情報をFBに送信
+    db.ref('/users/' + UserId + "/Personal").set(PersonalData);
+    // db.ref('/users/' + UserId + "/" + MonsterName).set(MonsterData);
+    // ローカルストレージにUserIDを送信    
+    localStorage.setItem('UserId', UserId);
+    localStorage.setItem('UserName', UserName); 
+    localStorage.setItem('MonsterName', MonsterName);
+    setTimeout(() => {
+      window.location.href='opening.html';      
+    }, 2000); 
+  }
+
+
+
+
+</script>
+
+    
+</body>
+</html>

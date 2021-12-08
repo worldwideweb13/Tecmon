@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/ending.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Parts">
+        <div class="BackImage" id="EndBack">
+        </div>
+        <!-- コメント欄 -->
+        <div id="Message_01" class="blackboard">
+            <p id="MotionText"></p>
+            <p id="Next" onclick="EndingMoji()">▼</p>
+        </div>
+        <div ><img src="./img/ending/musicicon.png" alt="" class="MusicIcon" onclick="end();"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- // firebase読み込み -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"
+    ></script>   
+    <script src="js/firebase.js"></script> 
+    <script src="js/ending.js"></script> 
+</body>
+</html>

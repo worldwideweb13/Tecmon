@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/shinka_1.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="Parts">
+        <div class="BackImage">
+            <!-- HP欄 -->
+            <div class="HpLBox">
+                <!-- HP文字列の表示 -->
+                <div class="GageBox">
+                    <div class="StatusFont">HP</div>
+                    <div id="HpBox" class="StatusFont">
+                        <div id="CurrentHp"></div><div id="MaxHp"></div>
+                    </div>    
+                </div>
+                <!-- HPバーの表示 -->                
+                <div id="HpGage">
+                    <div id="MonsterHpBar"></div>
+                </div>                    
+            </div>
+            <!-- キャラクターイメージ画像 -->
+            <img id ="MonsterImage" class ="Character purun" alt="">
+            <!-- コメント欄 -->
+            <div id="Message_01" class="blackboard">
+                <p id="MotionText">今日は何をする？</p>
+                <p id="Next" onclick="TextReading()" style="display: none;">▼</p>
+            </div>
+        </div>
+        <div class="NameBox">
+                <div id="MonsterName"></div>
+        </div>
+        <!-- 各ステータス欄 -->
+        <div class="Status">
+            <div class="GageBox">
+                <div class="GageStatus StatusFont">フロントエンドスキル</div>
+                <div id="FrontBox" class="StatusFont">
+                    <div id="CurrentFrontScore"></div><div class="MaxScore"></div>
+                </div>    
+            </div>
+            <div class="SkillGage">
+                <div class ="SkillValue" id="FrontScoreBar"></div>
+            </div>
+        </div>
+        <div class="Status">
+            <div class="GageBox">
+                <div class="GageStatus StatusFont">バックエンドスキル</div>
+                <div id="FrontBox" class="StatusFont">
+                    <div id="CurrentBackScore"></div><div class="MaxScore"></div>
+                </div>    
+            </div>
+            <div class="SkillGage">
+                <div class ="SkillValue" id="BackScoreBar"></div>
+            </div>
+        </div>
+        <div class="Status">
+            <div class="GageBox">
+                <div class="GageStatus StatusFont">インフラスキル</div>
+                <div id="FrontBox" class="StatusFont">
+                    <div id="CurrentInfraScore"></div><div class="MaxScore"></div>
+                </div>    
+            </div>
+            <div class="SkillGage">
+                <div class ="SkillValue" id="InfraScoreBar"></div>
+            </div>
+        </div>
+        <!-- ボタン欄 -->
+        <div id="ButtonBox">
+            <div class="BLBox_1">
+                <div id="FrontButton" class="btn btn--blue btn--cubic">HTML,CSS<br>を学ぶ</div>
+                <div id="BackButton" class="btn btn--blue btn--cubic">PHP,SQL<br>を学ぶ</div>
+                <div id="InfraButton" class="btn btn--blue btn--cubic">AWS,Azure<br>を学ぶ</div>
+            </div>
+            <div class="BLBox_2">
+                <div id="RestButton" class="btn btn--blue btn--cubic rest"> プロモンを休ませる</div>
+            </div>
+            <div class="BLBox_2">
+                <div id="CreateButton" class="btn btn--blue btn--cubic rest"> アプリ制作に取りかかる</div>
+            </div>            
+        </div>        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- // firebase読み込み -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"
+    ></script>   
+    <script src="js/firebase.js"></script> 
+    <script src="js/shinka_1.js"></script> 
+</body>
+</html>
+
+
+    

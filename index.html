@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Login</title>
+</head>
+<body>
+    <div id="login">
+        <div id="form-login">
+            <span class="fontawesome-user"></span>
+              <input type="text" id="UserId" placeholder="最初だよ">         
+            <span class="fontawesome-lock"></span>
+              <input type="password" id="PassWord" placeholder="最初だよ">
+              <div id="ErrorMessage">IDまたはPASSが間違っております</div>            
+              <input type="submit" value="Login" onclick="LoginAction()"> 
+              <input type="submit" style="margin-top: 10px" value="Register" onclick="RegisterAction()">            
+          </div>
+    </div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "*****",
+    authDomain: "*****",
+    projectId: "*****",
+    storageBucket: "*****",
+    messagingSenderId: "*****",
+    appId: "*****"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // ref.push();で()内の値をfirebaseに送信 
+  const db = firebase.database();
+
+  function LoginAction(){
+      // ユーザーの入力されたテキストデータを取得
+      const UserId = $("#UserId").val();
+      const PassWord = $("#PassWord").val();
+
+      db.ref('/users/' + UserId + "/Personal") .once("value",function(snapshot) {
+            const UserData = snapshot.val();
+            if (snapshot.exists()){
+                const FbUserPass = UserData.PassWord;
+                const FbUserId = UserData.UserId;
+                localStorage.setItem('UserId', FbUserId);
+            if(FbUserPass==PassWord && FbUserId==UserId){
+                console.log(FbUserPass+PassWord+FbUserId+FbUserId);
+                window.location.href='game.html';
+            }
+            } else {
+                document.getElementById("ErrorMessage").style.display="block";
+            }
+      });
+  }
+
+  // エラーメッセージは初期非表示
+  document.getElementById("ErrorMessage").style.display ="none";
+  // 登録画面に遷移
+ function RegisterAction(){
+    window.location.href='register.html';    
+  }
+
+ 
+
+</script>
+
+    
+</body>
+</html>

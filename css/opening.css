@@ -1,0 +1,161 @@
+html {
+    display: flex;
+    justify-content: center;
+}
+
+
+body {
+  background: #2c3338;
+  color: #606468;
+  font: 87.5%/1.5em 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+.Parts {
+ max-width: 1080px;
+ /* display: flex;
+ justify-content: center;  */
+}
+
+#StartIcon {
+  animation: flash 2s linear infinite;
+  width: 65%;
+  margin: 30% 17%;
+}
+
+@keyframes flash {
+  0%,100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* キャラクターアイコン */
+#Character {
+  width: 70%;
+  margin: 5% 16%;
+}
+
+/* コメント欄 */
+/* 黒板 */
+.blackboard {
+  position: relative;
+  margin: 0 auto 1.5rem;
+  padding: 1.6rem 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: 0 0 0 4px #fff inset;
+  background-color: rgba(0,0,0,0.9);
+ }
+    .blackboard a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .blackboard .blink-before::before {
+      content: '▼';
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      animation: blink 1.4s infinite;
+    }
+    .blackboard p:last-of-type {
+      margin-bottom: 0;
+    }
+    /* 回り込み */
+    .float-r {
+      float: right;
+    }
+    /* 回り込み解除 */
+    .clearfix {
+      zoom: 1;
+    }
+    .clearfix:after {
+      clear: both;
+      content: "";
+      display: block;
+    }
+    /* 点滅 */
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    @-webkit-keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* メッセージ欄テキスト */
+    @keyframes typing { 
+      from { width: 0; } 
+    }
+    
+    .TextMotion {
+      border-right: 5px solid;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 2s steps(32, end),
+      blink-car 1s infinite ease;    
+    }
+    .TextMotion_1 {
+      width: 13em; /* fallback */
+    }
+
+    .TextMotion_2 {
+      width: 10em; /* fallback */
+    }    
+
+    .TextMotion_3 {
+      width: 15em; /* fallback */
+    } 
+    
+    .TextMotion_4 {
+      width: 16em; /* fallback */
+    }
+
+    .TextMotion_5 {
+      width: 15em; /* fallback */
+    }
+
+    .TextMotion_6 {
+      width: 15em; /* fallback */
+    }
+
+    .TextMotion_7 {
+      width: 16em; /* fallback */
+    }
+
+    .TextMotion_8 {
+      width: 12em; /* fallback */
+    }
+
+    .TextMotion_9 {
+      width: 10em; /* fallback */
+    }
+
+    .TextMotion_10 {
+      width: 15em; /* fallback */
+    }
+
+    .TextMotion_11 {
+      width: 13em; /* fallback */
+    }
+
+    .TextMotion_12 {
+      width: 11em; /* fallback */
+    }
+
+/* レスポンシブ */
+@media (max-width: 800px) {
+  html {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    width: 100%;
+  }
+}
